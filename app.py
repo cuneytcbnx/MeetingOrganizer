@@ -7,9 +7,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meets.db'
 db = SQLAlchemy(app)
 
 
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    meets = Meet.query.all()
+    return render_template("index.html", meets=meets)
 
 
 @app.route('/add', methods=['POST'])
