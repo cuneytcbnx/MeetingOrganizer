@@ -49,12 +49,12 @@ pip install flask_sqlalchemy
 
 ### Toplantı Ekleme 
 
-![add](/static/add.png)
+![add](/static/add.JPG)
 ![add_message](/static/add_message.JPG)
 
 ### Toplantı Güncelleme 
 
-![edit](/static/edit.png)
+![edit](/static/edit.JPG)
 ![edit_message](/static/edit_message.JPG)
 
 ### Toplantı Silme
