@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, flash, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -22,18 +22,22 @@ def add():
         baslangic_saati = request.form.get('baslangic_saati')
         bitis_saati = request.form.get('bitis_saati')
         katilimcilar = request.form.get('katilimcilar')
-
-        newMeet = Meet(
-            baslik=baslik,
-            konu=konu,
-            tarih=tarih,
-            baslangic_saati=baslangic_saati,
-            bitis_saati=bitis_saati,
-            katilimcilar=katilimcilar,
-        )
-        db.session.add(newMeet)
-        db.session.commit()
-        return redirect(url_for('index'))
+        if not baslik or not konu:
+            flash('Baslik ve konu girmelisin!', "error")
+            return redirect(url_for('index'))
+        else:
+            newMeet = Meet(
+                baslik=baslik,
+                konu=konu,
+                tarih=tarih,
+                baslangic_saati=baslangic_saati,
+                bitis_saati=bitis_saati,
+                katilimcilar=katilimcilar,
+            )
+            db.session.add(newMeet)
+            db.session.commit()
+            flash('Başarılı bir şekilde eklendi.')
+            return redirect(url_for('index'))
 
 
 @app.route('/delete/<string:job_id>')
@@ -41,6 +45,7 @@ def deleted(job_id):
     meet = Meet.query.filter_by(id=job_id).first()
     db.session.delete(meet)
     db.session.commit()
+    flash("Başarılı bir şekilde silindi.", "error")
     return redirect(url_for('index'))
 
 
@@ -55,6 +60,7 @@ def update():
         meet.bitis_saati = request.form['bitis_saati']
         meet.katilimcilar = request.form['katilimcilar']
         db.session.commit()
+        flash("Başarılı bir şekilde güncellendi.")
 
         return redirect(url_for('index'))
 
