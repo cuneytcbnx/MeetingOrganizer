@@ -59,5 +59,5 @@ pip install flask_sqlalchemy
 
 ### Toplantı Silme
 
-![delete](/static/delete.JPG)
-![delete_message](/static/delete.JPG)
+![delete](/static/delete.jpg)
+![delete_message](/static/delete_message.JPG)
