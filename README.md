@@ -45,19 +45,19 @@ pip install flask_sqlalchemy
 
 ### Anasayfa
 
-![home](/static/home.png)
+![home](/static/home.JPG)
 
 ### Toplantı Ekleme 
 
 ![add](/static/add.png)
-![add_message](/static/add_message.png)
+![add_message](/static/add_message.JPG)
 
 ### Toplantı Güncelleme 
 
 ![edit](/static/edit.png)
-![edit_message](/static/edit_message.png)
+![edit_message](/static/edit_message.JPG)
 
 ### Toplantı Silme
 
-![delete](/static/delete.png)
-![delete_message](/static/delete.png)
+![delete](/static/delete.JPG)
+![delete_message](/static/delete.JPG)
