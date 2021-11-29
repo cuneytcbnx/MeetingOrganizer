@@ -23,7 +23,7 @@ Kullanıcıların eklenen toplantıları;
 * görüntüleyebilecekleri,
 * düzenleyebilecekleri,
 * silebilecekleri
-arayüzdür.
+bir arayüz içerir.
 
 
 ## Uygulamayı Başlat
