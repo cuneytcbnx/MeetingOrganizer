@@ -10,9 +10,23 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <i class="fa fa-home"></i>
+            Ana Sayfa
+        </a>
+    </nav>
+
     {% block body %}
     {% endblock %}
 
+    <div id="container" class="footer" style="position: fixed; width: 100%;text-align: center; left: 0;
+  bottom: 0; ">
+        <nav class="navbar navbar-dark bg-dark">
+            <span style="color: #eeeeee"><i class="fa fa-copyright"> copyright Cüneyt Taha Çoban</i> - Meeting
+                Organizer</span>
+        </nav>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
