@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -10,6 +10,29 @@ db = SQLAlchemy(app)
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+@app.route('/add', methods=['POST'])
+def add():
+    if request.method == 'POST':
+        baslik = request.form.get('baslik')
+        konu = request.form.get('konu')
+        tarih = request.form.get('tarih')
+        baslangic_saati = request.form.get('baslangic_saati')
+        bitis_saati = request.form.get('bitis_saati')
+        katilimcilar = request.form.get('katilimcilar')
+
+        newMeet = Meet(
+            baslik=baslik,
+            konu=konu,
+            tarih=tarih,
+            baslangic_saati=baslangic_saati,
+            bitis_saati=bitis_saati,
+            katilimcilar=katilimcilar,
+        )
+        db.session.add(newMeet)
+        db.session.commit()
+        return redirect(url_for('index'))
 
 
 class Meet(db.Model):
