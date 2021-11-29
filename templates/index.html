@@ -21,22 +21,119 @@
                             <th scope="col">Katilimcilar</th>
                             <th scope="col">Surec</th>
                         </tr>
-
-                        <tr>
-                            <th>1</th>
-                            <td>A</td>
-                            <td>B</td>
-                            <td>29.11.2021</td>
-                            <td>11:30</td>
-                            <td>12:00</td>
-                            <td>Cüneyt</td>
-                            <td>
-                                <a href="" class="btn btn-info" data-toggle="modal" data-target="#modaledit">Düzenle</a>
-                                <a href="" class="btn btn-danger btn-xs"
-                                    onclick="return confirm('Silmek istediğinizden emin misiniz ?')">Sil</a>
-                            </td>
-                        </tr>
                     </thead>
+                    <tr>
+                        <th>1</th>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>29.11.2021</td>
+                        <td>11:30</td>
+                        <td>12:00</td>
+                        <td>Cüneyt</td>
+                        <td>
+                            <a href="" class="btn btn-info" data-toggle="modal" data-target="#modaledit">Düzenle</a>
+                            <a href="" class="btn btn-danger btn-xs"
+                                onclick="return confirm('Silmek istediğinizden emin misiniz ?')">Sil</a>
+                        </td>
+                    </tr>
+                    <div id="modaledit" class="modal fade" role="dialog">
+
+                        <div class="modal-dialog">
+
+
+                            <div class="modal-content">
+
+
+                                <div class="modal-header">
+
+
+                                    <h4 class="modal-title">A - Toplantı Bilgilerini Düzenle</h4>
+
+
+                                </div>
+
+
+                                <div class="modal-body">
+
+
+                                    <form action="" method="POST">
+
+
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mb-2 text-primary">Tarih & Saat</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="baslangic_saati">Başlangıç Saati</label>
+                                                    <input type="hidden" name="id" value="1">
+                                                    <input type="time" name="baslangic_saati" class="form-control"
+                                                        placeholder="Saat seçiniz..." value="11:30">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="tarih">Tarih</label>
+                                                    <input type="date" name="tarih" data-date=""
+                                                        data-date-format="DD MMMM YYYY" class="form-control"
+                                                        placeholder="Tarih giriniz..." value="2021-11-29">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="bitis_saati">Bitiş Saati</label>
+                                                    <input type="time" name="bitis_saati" class="form-control"
+                                                        placeholder="Saat seçiniz..." value="12:00">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mb-2 text-primary">Toplantı Konusu</h6>
+                                                <div class="form-group">
+                                                    <label for="konu">Konu</label>
+                                                    <textarea class="form-control" name="konu" rows="3"
+                                                        placeholder="Toplantının ne hakkında olduğunu belirtiniz... ">B</textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mt-3 mb-2 text-primary">Toplantıya Katılacak Kişiler</h6>
+                                                <div class="form-group">
+                                                    <label for="Street">Katılımcılar</label>
+                                                    <input type="name" name="katilimcilar" class="form-control"
+                                                        placeholder="Toplantıya katılacak kişileri giriniz..."
+                                                        value="Cüneyt">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">İptal</button>
+                                            <button class="btn btn-primary" type="submit">Güncelle</button>
+
+                                        </div>
+                                    </form>
+
+
+                                </div>
+
+
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+
 
             </div>
             <div id="modaladd" class="modal fade" role="dialog">
