@@ -31,14 +31,22 @@
                     <tbody>
                         {% for i in meets %}
                         <tr>
-                            <th>{{i.id}}</th>
-                            <td>{{i.baslik}}</td>
-                            <td>{{i.konu}}</td>
-                            <td>{{i.date}}</td>
-                            <td>{{i.baslangic_saati}}</td>
-                            <td>{{i.bitis_saati}}</td>
-                            <td>{{i.katilimcilar}}</td>
-                            <td>
+                            <th style="background-color:rgb(245,245,245);" scope="row">{{ i.id }}</th>
+                            <td style="background-color:rgb(245,245,245);"><a href="/update" data-toggle="modal"
+                                    data-target="#modaledit{{i.id}}"><span class="badge badge-info">{{
+                                        i.baslik }}</span></a></td>
+                            <td style="background-color:rgb(245,245,245);white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 300px;">{{ i.konu }}</td>
+                            <td style="background-color:rgb(245,245,245);">{{i.tarih}}</td>
+                            <td style="background-color:rgb(245,245,245);color:green;">{{ i.baslangic_saati }}</td>
+                            <td style="background-color:rgb(245,245,245);color:red;">{{ i.bitis_saati }}</td>
+                            <td style="background-color:rgb(245,245,245);white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 300px;">{{ i.katilimcilar }}</td>
+                            <td style="background-color:rgb(245,245,245);">
                                 <a href="" class="btn btn-info" data-toggle="modal" data-target="#modaledit">Düzenle</a>
                                 <a href="" class="btn btn-danger btn-xs"
                                     onclick="return confirm('Silmek istediğinizden emin misiniz ?')">Sil</a>
