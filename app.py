@@ -36,6 +36,29 @@ def add():
         return redirect(url_for('index'))
 
 
+@app.route('/delete/<string:job_id>')
+def deleted(job_id):
+    meet = Meet.query.filter_by(id=job_id).first()
+    db.session.delete(meet)
+    db.session.commit()
+    return redirect(url_for('index'))
+
+
+@app.route('/update', methods=['GET', 'POST'])
+def update():
+    if request.method == 'POST':
+        meet = Meet.query.get(request.form.get('id'))
+        print(meet)
+        meet.konu = request.form['konu']
+        meet.tarih = request.form['tarih']
+        meet.baslangic_saati = request.form['baslangic_saati']
+        meet.bitis_saati = request.form['bitis_saati']
+        meet.katilimcilar = request.form['katilimcilar']
+        db.session.commit()
+
+        return redirect(url_for('index'))
+
+
 class Meet(db.Model):
     __tablename__ = "meet"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

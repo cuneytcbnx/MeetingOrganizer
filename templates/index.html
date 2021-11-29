@@ -47,12 +47,13 @@
                             text-overflow: ellipsis;
                             max-width: 300px;">{{ i.katilimcilar }}</td>
                             <td style="background-color:rgb(245,245,245);">
-                                <a href="" class="btn btn-info" data-toggle="modal" data-target="#modaledit">Düzenle</a>
-                                <a href="" class="btn btn-danger btn-xs"
+                                <a href="/update" class="btn btn-info" data-toggle="modal"
+                                    data-target="#modaledit{{i.id}}">Düzenle</a>
+                                <a href="/delete/{{i.id}}" class="btn btn-danger btn-xs"
                                     onclick="return confirm('Silmek istediğinizden emin misiniz ?')">Sil</a>
                             </td>
                         </tr>
-                        <div id="modaledit" class="modal fade" role="dialog">
+                        <div id="modaledit{{i.id}}" class="modal fade" role="dialog">
 
                             <div class="modal-dialog">
 
@@ -63,7 +64,7 @@
                                     <div class="modal-header">
 
 
-                                        <h4 class="modal-title">A - Toplantı Bilgilerini Düzenle</h4>
+                                        <h4 class="modal-title">{{i.baslik}} - Toplantı Bilgilerini Düzenle</h4>
 
 
                                     </div>
@@ -72,7 +73,7 @@
                                     <div class="modal-body">
 
 
-                                        <form action="" method="POST">
+                                        <form action="/update" method="POST">
 
 
                                             <div class="row gutters">
@@ -92,7 +93,7 @@
                                                         <label for="tarih">Tarih</label>
                                                         <input type="date" name="tarih" data-date=""
                                                             data-date-format="DD MMMM YYYY" class="form-control"
-                                                            placeholder="Tarih giriniz..." value="{{i.date}}">
+                                                            placeholder="Tarih giriniz..." value="{{i.tarih}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
